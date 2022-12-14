@@ -1,4 +1,3 @@
-//Program of linked list using c++ 
 #include<stdio.h>
 #include<stdlib.h>
 typedef struct nodetype{
