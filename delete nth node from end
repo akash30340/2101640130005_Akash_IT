@@ -1,0 +1,26 @@
+ListNode *ptr1,*ptr,*temp;
+       int j,count=1;
+       temp=ptr=ptr1=head;
+       while(ptr->next!=NULL)
+       {
+            ptr=ptr->next;
+            count++;
+       }
+       if(count==1)
+       return NULL;
+       j=count-n;
+       if(j==0)
+       {
+           head=head->next;
+           return head;
+       }
+       count=0;
+            while(count<j)
+            {
+                ptr1=temp;
+                temp=temp->next;
+                count++;
+            }
+            ptr1->next=temp->next;
+            return head;
+       
