@@ -1,0 +1,31 @@
+vector<long long> nextLargerElement(vector<long long> arr, int n)
+    {
+        long long int i;
+        long long int stack[100000];
+        long long int top=0;
+        long long int temp;
+        stack[0]=arr[n-1];
+        arr[n-1]=-1;
+        for(i=n-2;i>=0;)
+        {
+           if(top==-1)
+           {
+               top=0;
+               stack[top]=arr[i];
+               arr[i]=-1;
+               i--;
+           }
+           else if(arr[i]<stack[top])
+           {
+               temp=arr[i];
+               arr[i]=stack[top];
+               stack[++top]=temp;
+               i--;
+           }
+           else
+           top--;
+        }
+        return arr;
+        
+        
+    }
