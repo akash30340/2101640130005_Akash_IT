@@ -1,0 +1,36 @@
+bool isValid(string s) 
+    {
+        int i;
+        char cur;
+        stack<char>st;
+        for(i=0;i<st.size();i++)
+        {
+            cur=s[i];
+            if(cur=='(' || cur=='{' || cur=='[')
+            {
+                st.push(s[i]);
+            }
+            else
+            {
+                if(cur=='}')
+                {
+                if(st.top()==cur)
+                st.pop();
+                }
+                else if(cur==')')
+                {
+                if(st.top()==')')
+                st.pop();
+                }
+                else
+                {
+                if(st.top()==']')
+                st.pop();
+                }
+            }
+        }
+        if(!st.empty())
+        return false;
+        return true;
+        
+    }
