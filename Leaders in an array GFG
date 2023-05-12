@@ -1,0 +1,19 @@
+ vector<int> leaders(int a[], int n)
+    {
+        int i,temp;
+        vector<int>b;
+        stack<int>st;
+        b.push_back(a[n-1]);
+        st.push(a[n-1]);
+        for(i=n-2;i>=0;i--)
+        {
+            if(a[i]>=st.top())
+            {
+                st.push(a[i]);
+                b.push_back(a[i]);
+            }
+            else;
+        }
+        reverse(b.begin(),b.end());
+        return b;
+    }
